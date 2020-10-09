@@ -1,0 +1,11 @@
+{
+  "name": "Koreanbots_UnOfficial",
+  "version": "0.0.1",
+  "description": "Koreanbots.dev V2 Unoffical SDK",
+  "main": "index.js",
+  "author": "MoartMedia",
+  "license": "MIT",
+  "dependencies": {
+    "gotql": "^2.0.1"
+  }
+}
