@@ -12,4 +12,4 @@ User.TYPES = {
     github: String,
     bots: [Bot]
 }
-User.Search = ["perm"]
+User.OPTION = ["perm"]

@@ -29,4 +29,4 @@ Bot.TYPES = {
     bg: String,
     owners: [User]
 }
-Bot.Search = ["id","lib","prefix","name","intro","desc","tag"]
+Bot.OPTION = ["id","lib","prefix","name","intro","desc","tag"]

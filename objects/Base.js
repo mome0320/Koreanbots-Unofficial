@@ -1,10 +1,11 @@
 class Base{
 
-    constructor(require,...options){
-        this.list = this.constructor.resolveField(...options);
-        this.require = require;
-        this.child = {};
-        //children
+    constructor(options = {}){
+        if(options.list)
+        this.list = this.constructor.resolveField(options.list);
+        this.option = {};
+        this.args = {};
+        
     }
     add(...element){
         for(const type of element){
@@ -25,12 +26,13 @@ class Base{
 
     }
     build(){
-        return{
+        const BuildBase = {
         operation: {
             name: this.constructor.name.toLowerCase(),
             fields: Array.from(this.list)
         }
         }
+        BuildBase.operation.args = this.args;
     }
     addChild(name,object){
         //파생 요소 추가.
@@ -40,9 +42,10 @@ class Base{
         if(Array.isArray(options)){
             return new Set(options.filter((type) => typeof this.TYPES[type] !== 'undefined'));
         }
+        throw new Error('Options Must Be Array!');
         //error
     }
 }
 Base.TYPES = {};
-Base.Search = [];
+Base.OPTION = [];
 module.exports = Base;
